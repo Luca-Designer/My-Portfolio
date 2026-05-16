@@ -25,9 +25,15 @@
             <span class="brand-name">Luca Ruas</span>
             <span class="brand-title">Web Developer</span>
         </div>
-        <div class="lang-switcher-stacked">
-            <button id="lang-btn-pt" onclick="setLanguage('pt')" class="btn-lang" title="Português">BR</button>
-            <button id="lang-btn-en" onclick="setLanguage('en')" class="btn-lang active" title="English">EN</button>
+        <div class="lang-switcher desktop-lang">
+            <button onclick="setLanguage('pt')" class="btn-lang btn-lang-pt" title="Português">
+                <div class="flag-circle br"></div>
+                <span>BR</span>
+            </button>
+            <button onclick="setLanguage('en')" class="btn-lang btn-lang-en active" title="English">
+                <div class="flag-circle us"></div>
+                <span>EN</span>
+            </button>
         </div>
     </header>
 
@@ -38,6 +44,18 @@
             <a href="index.html" class="pill-item" data-i18n="nav-work">Work</a>
             <a href="about.html" class="pill-item active" data-i18n="nav-about">Info</a>
         </div>
+        
+        <div class="lang-switcher mobile-lang">
+            <button onclick="setLanguage('pt')" class="btn-lang btn-lang-pt" title="Português">
+                <div class="flag-circle br"></div>
+                <span>BR</span>
+            </button>
+            <button onclick="setLanguage('en')" class="btn-lang btn-lang-en active" title="English">
+                <div class="flag-circle us"></div>
+                <span>EN</span>
+            </button>
+        </div>
+
         <a href="mailto:lruas.contact@gmail.com" class="contact-circle" title="Contact">
             <i class="ph ph-at"></i>
         </a>
@@ -46,11 +64,15 @@
     <!-- About Hero -->
     <section class="about-hero">
         <div class="about-container">
-            <div class="about-badge">
-                <span class="dot-active"></span>
-                <span data-i18n="about-badge">ABOUT ME</span>
+            <div class="mobile-brand">
+                <span class="dot"></span> Luca Ruas — Web Developer
             </div>
             
+            <div class="about-badge">
+                <div class="status-dot"></div>
+                <span data-i18n="about-badge">ABOUT ME</span>
+            </div>
+
             <h1 class="about-headline" id="about-title">
                 Dedicated to creating digital products that blend <span class="serif-italic">aesthetic sense</span> with professional performance.
             </h1>
@@ -169,7 +191,9 @@
     <footer>
         <div class="footer-content">
             <div class="profile-section">
-                 <div class="profile-img-small"></div>
+                 <div class="profile-img-small">
+                     <img src="https://media.discordapp.net/attachments/1028765909915017216/1220911820102041610/IMG_7122.jpg?ex=6a091e3d&is=6a07ccbd&hm=9d854b4110f08983243b6c61873ee3a885c01d6f05e4f47ccf8d5f5de57c6872&=&format=webp&width=462&height=694" alt="Luca Ruas">
+                 </div>
                  <div class="footer-contact">
                      <p>61 98199-7775</p>
                      <p>lruas.contact@gmail.com</p>
@@ -256,10 +280,7 @@
             document.getElementById('about-title').innerHTML = translations[lang]['about-title'];
 
             document.querySelectorAll('.btn-lang').forEach(btn => btn.classList.remove('active'));
-            const ptBtn = document.getElementById('lang-btn-pt');
-            const enBtn = document.getElementById('lang-btn-en');
-            if(lang === 'pt') ptBtn.classList.add('active');
-            else enBtn.classList.add('active');
+            document.querySelectorAll(`.btn-lang-${lang}`).forEach(btn => btn.classList.add('active'));
             document.body.className = 'lang-' + lang;
             localStorage.setItem('preferredLang', lang);
 

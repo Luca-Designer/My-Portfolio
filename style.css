@@ -47,7 +47,7 @@ body {
     right: 0;
     display: flex;
     justify-content: space-between;
-    padding: 2rem 4rem;
+    padding: 3rem 4rem; /* Distância acima e abaixo aumentada */
     z-index: 90;
     pointer-events: none;
 }
@@ -72,31 +72,76 @@ body {
     font-size: 0.8rem;
 }
 
-/* Lang Switcher Stacked */
-.lang-switcher-stacked {
+/* Marca versão mobile (acima do titulo) */
+.mobile-brand {
+    display: none;
+}
+
+.mobile-brand-hero {
+    display: none;
+}
+
+/* Language Switcher */
+.lang-switcher {
     display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    text-align: right;
+    gap: 0.4rem;
+    background: rgba(25, 25, 30, 0.6);
+    padding: 0.3rem;
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
-.lang-switcher-stacked .btn-lang {
+.btn-lang {
     background: transparent;
-    border: none;
+    border: 1px solid transparent;
     color: var(--text-secondary);
-    font-size: 0.85rem;
-    font-weight: 500;
     cursor: pointer;
-    transition: color 0.3s;
-    padding: 0;
+    padding: 0.4rem 0.8rem;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.lang-switcher-stacked .btn-lang:hover {
+.btn-lang span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.btn-lang.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.05);
     color: var(--text-primary);
 }
 
-.lang-switcher-stacked .btn-lang.active {
+.flag-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(0.4);
+    transition: filter 0.3s ease;
+}
+
+.flag-circle.br { background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg'); }
+.flag-circle.us { background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg'); }
+
+.btn-lang.active .flag-circle {
+    filter: grayscale(0);
+}
+
+.btn-lang:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.05);
     color: var(--text-primary);
+}
+
+.mobile-lang {
+    display: none; /* Hide on desktop */
 }
 
 /* Floating Navbar */
@@ -637,11 +682,23 @@ footer {
 }
 
 .profile-img-small {
-    width: 50px;
-    height: 50px;
+    width: 80px; /* Aumentado de 50px */
+    height: 80px;
     border-radius: 50%;
     background: #1e1e24;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-img-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%; /* Joga a imagem um pouco para baixo para focar no rosto */
+    transform: scale(1.4); /* Zoom para o rosto ficar mais aparente */
 }
 
 .footer-contact p {
@@ -686,40 +743,265 @@ footer {
 }
 
 @media (max-width: 768px) {
+    #vanta-bg {
+        opacity: 0.18; /* Aumentado para ser mais visível no mobile */
+    }
+
     /* Redimensionamento de fontes para melhor encaixe */
-    .hero-headline { font-size: 2.5rem; }
-    .hero-subtext { font-size: 1rem; }
+    .hero-headline { 
+        font-size: 2rem; /* Reduzido ainda mais */
+        line-height: 1.1; 
+        text-align: left;
+    }
+    
+    .hero-subtext { 
+        font-size: 1rem; 
+        text-align: left;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .primary-desc, .secondary-desc {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
     .section-title { font-size: 2.2rem; }
     .project-info h3 { font-size: 1.5rem; }
     
+    .browser-content {
+        padding: 2rem 1.5rem; 
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url('hero_mobile_bg.png') center/cover;
+    }
+    
+    .hero-section {
+        flex-direction: column;
+        padding-top: 80px; 
+        padding-left: 10px; /* Alinhado com o padding das outras seções */
+        padding-right: 10px;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .browser-mockup { 
+        height: auto;
+        min-height: 60vh;
+        margin: 0; 
+        width: 100%;
+    }
+    
+    .mobile-brand-hero {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        padding-left: 10px; /* Alinhar com o card */
+        width: 100%;
+    }
+    
+    .mobile-brand-hero .dot {
+        width: 8px;
+        height: 8px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    
     /* Espaçamentos: 50px superior/inferior, 10px esquerda/direita */
-    .navbar { padding: 1.5rem 10px; }
-    /* Navegação Flutuante no Mobile (Bottom Bar) */
-    .floating-navbar {
-        top: auto;
-        bottom: 2rem;
-        background: rgba(25, 25, 30, 0.4);
-        padding: 0.5rem;
-        border-radius: 100px;
+    .top-header {
+        padding: 1.5rem 10px; /* Reduzir padding para a floating navbar encaixar */
+        position: absolute;
+    }
+    
+    .nav-brand {
+        display: none; /* Esconder a marca do topo */
+    }
+    
+    .mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+    
+    .mobile-brand .dot {
+        width: 8px;
+        height: 8px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    
+    .desktop-lang {
+        display: none; /* Esconder a versão desktop no mobile */
+    }
+    
+    .mobile-lang {
+        display: flex;
+        flex-direction: column;
+        gap: 0; /* Gap zero para caber na altura fixa */
+        background: rgba(25, 25, 30, 0.6);
+        padding: 0.2rem; /* Padding reduzido */
+        border-radius: 16px; /* Arredondamento um pouco menor para harmonizar */
+        border: 1px solid var(--border-color);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
+        height: 48px; /* Altura fixa igual à da nav-pill */
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .btn-lang {
+        padding: 0 0.6rem;
+        height: 18px; /* Altura controlada */
+        justify-content: center;
+        border: none;
+        background: transparent;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-lang.active {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+    }
+
+    .btn-lang span {
+        font-size: 0.75rem; /* Ajustado para caber */
+    }
+
+    .flag-circle {
+        width: 14px; /* Ajustado para caber */
+        height: 14px;
+    }
+    
+    /* Header Flutuante Superior dividida em 3 */
+    .floating-navbar {
+        top: 1.5rem;
+        bottom: auto;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0 1.5rem;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        justify-content: space-between;
     }
     
     .nav-pill {
-        background: transparent;
-        border: none;
+        background: rgba(25, 25, 30, 0.6); 
+        border: 1px solid var(--border-color);
+        height: 48px; /* Altura fixa igual à da mobile-lang */
+        box-sizing: border-box;
+        align-items: center;
     }
     
-    .hero-glass-panel { 
-        height: auto;
-        min-height: 60vh;
-        margin: 10px; 
+    .top-header {
+        padding: 2rem 1.5rem; /* Ajuste no header principal para mobile */
     }
-    .hero-content { padding: 50px 10px; }
+    
+
     
     .work-section { padding: 50px 10px; }
-    .project-card { padding: 20px; }
-    .card-image-container { min-height: 200px; }
+    
+    .project-card { 
+        padding: 30px 20px 0 20px;
+        min-height: auto; /* Permite que o card se adapte ao tamanho da imagem */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: linear-gradient(180deg, #1a1a20 0%, #0d0d11 100%);
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        gap: 1.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card-header {
+        order: 1;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .card-title-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .card-title-group h2 {
+        font-size: 1.05rem; /* Ajuste final do tamanho da fonte */
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0;
+    }
+
+    .card-subtitle {
+        font-size: 0.7rem; /* Texto menor */
+        line-height: 1.4;
+        color: var(--text-secondary);
+        margin: 0;
+    }
+
+    .card-header > i {
+        font-size: 1.1rem;
+        opacity: 0.8;
+        color: var(--text-primary);
+        transform: rotate(-45deg); /* Faz a seta apontar para cima e direita */
+    }
+    
+    .card-image-container { 
+        order: 2;
+        width: 100%;
+        min-height: auto;
+        background: #000;
+        border-radius: 15px 15px 0 0;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: none;
+        overflow: hidden;
+        margin-top: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .card-project-img, .card-image-container img {
+        width: 100%;
+        height: auto; /* Mantém a proporção original da imagem, sem cortar */
+        object-fit: contain; /* Garante que a imagem inteira seja visível */
+        object-position: top center;
+        display: block;
+    }
+
+    /* Simular barra de navegador no card */
+    .card-image-container::before {
+        content: "";
+        display: block;
+        height: 25px;
+        background: rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Ícone de Contato Flutuante Canto Inferior Direito */
+    .contact-circle {
+        position: fixed;
+        bottom: 1.2rem; /* Mais para baixo */
+        right: 1.2rem;
+        z-index: 999;
+    }
     
     .info-section { padding: 50px 10px; }
     .info-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -842,11 +1124,12 @@ footer {
 
 @media (max-width: 768px) {
     .about-hero {
-        padding: 80px 10px 50px; /* 80px topo (navbar), 10px laterais, 50px inferior */
+        padding: 120px 10px 50px; /* Aumentado o topo para dar os 50px de distância do header (que tem 50px de padding) */
         min-height: auto;
     }
     .about-headline {
         font-size: 2rem;
+        line-height: 1.1; /* Diminuído o espaço entre títulos */
     }
     .story-text p {
         font-size: 1rem;
@@ -855,6 +1138,10 @@ footer {
         font-size: 1.15rem;
     }
     .about-divider {
-        margin: 2rem 0;
+        margin: 1rem 0; /* Diminuído de 2rem para 1rem */
+    }
+    
+    .about-story {
+        margin-top: 1rem; /* Diminuído de 2rem para 1rem */
     }
 }
