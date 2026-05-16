@@ -1145,3 +1145,5 @@ footer {
         margin-top: 1rem; /* Diminuído de 2rem para 1rem */
     }
 }
+
+.skill-fill { transition: width 1.5s ease-in-out; }

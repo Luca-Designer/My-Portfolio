@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luca Ruas - Web Developer</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     
     <!-- Google Fonts -->
@@ -317,6 +318,10 @@
                         <h4 data-i18n="edu-char">Character Creation</h4>
                         <p>Gamifica • 40h (100%)</p>
                     </div>
+                    <div class="info-item">
+                        <h4 data-i18n="edu-ai">AI Training</h4>
+                        <p data-i18n="edu-ai-status">Ongoing</p>
+                    </div>
                 </div>
             </div>
             
@@ -325,23 +330,27 @@
                 <div class="skills-list">
                     <div class="skill">
                         <span class="skill-name">Elementor</span>
-                        <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="95%" style="width: 0%"></div></div>
                     </div>
                     <div class="skill">
                         <span class="skill-name">Wordpress</span>
-                        <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="95%" style="width: 0%"></div></div>
                     </div>
                     <div class="skill">
                         <span class="skill-name">Inglês</span>
-                        <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="85%" style="width: 0%"></div></div>
                     </div>
                     <div class="skill">
                         <span class="skill-name">SEO</span>
-                        <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="75%" style="width: 0%"></div></div>
                     </div>
                     <div class="skill">
                         <span class="skill-name">AI Tools (Antigravity, Claude.ai, Lovable)</span>
-                        <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="90%" style="width: 0%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Outlier.ai & DataAnnotation</span>
+                        <div class="skill-bar"><div class="skill-fill" data-width="88%" style="width: 0%"></div></div>
                     </div>
                 </div>
             </div>
@@ -391,6 +400,8 @@
                 "edu-english": "English",
                 "edu-narrative": "Digital Narrative",
                 "edu-char": "Character Creation",
+                "edu-ai": "AI Training",
+                "edu-ai-status": "Ongoing",
                 "skills-title": "Hard Skills",
                 "footer-made": "Made with love and a glass of water (I forgot to put the ice in the fridge)"
             },
@@ -414,6 +425,8 @@
                 "edu-english": "Inglês",
                 "edu-narrative": "Narrativa Digital",
                 "edu-char": "Criação de Personagem",
+                "edu-ai": "Treinamento de IA",
+                "edu-ai-status": "Ongoing",
                 "skills-title": "Hard Skills",
                 "footer-made": "Feito com amor e um copo d'água (esqueci de colocar o gelo no refrigerador)"
             }
@@ -449,6 +462,24 @@
             const urlLang = urlParams.get('lang');
             const savedLang = urlLang || localStorage.getItem('preferredLang') || 'en';
             setLanguage(savedLang);
+            
+            // Skill bar animation observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const skillFills = entry.target.querySelectorAll('.skill-fill');
+                        skillFills.forEach(fill => {
+                            fill.style.width = fill.getAttribute('data-width');
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const infoGrid = document.querySelector('.info-grid');
+            if (infoGrid) {
+                observer.observe(infoGrid);
+            }
         };
 
         function scrollToSection(id) {
