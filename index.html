@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Ruas - Web Developer</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="lang-en">
+    
+    <!-- Animated Background -->
+    <div id="vanta-bg"></div>
+    <!-- Static Top Header -->
+    <header class="top-header">
+        <div class="nav-brand">
+            <span class="brand-name">Luca Ruas</span>
+            <span class="brand-title">Web Developer</span>
+        </div>
+        <div class="lang-switcher-stacked">
+            <button id="lang-btn-pt" onclick="setLanguage('pt')" class="btn-lang" title="Português">BR</button>
+            <button id="lang-btn-en" onclick="setLanguage('en')" class="btn-lang active" title="English">EN</button>
+        </div>
+    </header>
+
+    <!-- Floating Fixed Nav -->
+    <nav class="floating-navbar">
+        <div class="nav-pill">
+            <div class="pill-indicator"></div>
+            <a href="index.html" class="pill-item active" data-i18n="nav-work">Work</a>
+            <a href="about.html" class="pill-item" data-i18n="nav-about">Info</a>
+        </div>
+        <a href="mailto:lruas.contact@gmail.com" class="contact-circle" title="Contact">
+            <i class="ph ph-at"></i>
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        
+        <!-- Voltando para o Mockup da Janela do Navegador -->
+        <div class="browser-mockup" id="interactive-mockup">
+            <div class="browser-top">
+                <div class="mac-dots">
+                    <span class="dot close"></span>
+                    <span class="dot minimize"></span>
+                    <span class="dot maximize"></span>
+                </div>
+                <div class="browser-add">
+                    <i class="ph ph-plus"></i>
+                </div>
+            </div>
+            <div class="browser-content">
+                <div class="hero-text-wrapper">
+                    <h1 class="hero-headline" id="hero-title">
+                        I build platforms,<br>
+                        websites & <span class="serif-italic">landing pages.</span>
+                    </h1>
+                    
+                    <div class="hero-subtext">
+                        <p class="primary-desc" data-i18n="hero-status">Graduated Web Developer. Based in Brazil.</p>
+                        <p class="secondary-desc" data-i18n="hero-focus">Focused on connecting brands and users efficiently.</p>
+                    </div>
+                </div>
+
+                <div class="scroll-chevron">
+                    <i class="ph ph-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="work-section" id="work">
+        
+        <!-- Card de Projeto Tropicalchic.ca (Clicável) -->
+        <a href="https://tropicalchic.ca" target="_blank" class="project-card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <h2>Tropicalchic.ca</h2>
+                    <p class="card-subtitle" data-i18n="project3-desc">E-commerce project focused on tropical fashion and lifestyle.</p>
+                </div>
+                <i class="ph ph-arrow-right"></i>
+            </div>
+            
+            <div class="card-image-container">
+                <div class="card-browser-top">
+                    <div class="browser-tabs">
+                        <div class="card-mac-dots">
+                            <span class="dot close"></span>
+                            <span class="dot minimize"></span>
+                            <span class="dot maximize"></span>
+                        </div>
+                        <div class="browser-tab-active"></div>
+                        <div class="browser-add-tab"><i class="ph ph-plus"></i></div>
+                    </div>
+                    <div class="browser-nav">
+                        <div class="nav-controls">
+                            <i class="ph ph-arrow-left"></i>
+                            <i class="ph ph-arrow-right"></i>
+                            <i class="ph ph-arrow-clockwise"></i>
+                        </div>
+                        <div class="nav-search-bar"></div>
+                        <div class="nav-profile">
+                            <i class="ph ph-user-circle"></i>
+                            <i class="ph ph-dots-three-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://github.com/Luca-Designer/photos/blob/main/Captura%20de%20tela%202026-05-15%20174414.png?raw=true" alt="Tropicalchic" class="card-project-img">
+            </div>
+        </a>
+
+        <!-- Card de Projeto BECK (Clicável) -->
+        <a href="https://www.becalmnkind.com" target="_blank" class="project-card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <h2>BECK</h2>
+                    <p class="card-subtitle" data-i18n="project4-desc">Digital project focused on mental health and wellness.</p>
+                </div>
+                <i class="ph ph-arrow-right"></i>
+            </div>
+            
+            <div class="card-image-container">
+                <div class="card-browser-top">
+                    <div class="browser-tabs">
+                        <div class="card-mac-dots">
+                            <span class="dot close"></span>
+                            <span class="dot minimize"></span>
+                            <span class="dot maximize"></span>
+                        </div>
+                        <div class="browser-tab-active"></div>
+                        <div class="browser-add-tab"><i class="ph ph-plus"></i></div>
+                    </div>
+                    <div class="browser-nav">
+                        <div class="nav-controls">
+                            <i class="ph ph-arrow-left"></i>
+                            <i class="ph ph-arrow-right"></i>
+                            <i class="ph ph-arrow-clockwise"></i>
+                        </div>
+                        <div class="nav-search-bar"></div>
+                        <div class="nav-profile">
+                            <i class="ph ph-user-circle"></i>
+                            <i class="ph ph-dots-three-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://github.com/Luca-Designer/photos/blob/main/Captura%20de%20tela%202026-05-15%20172245.png?raw=true" alt="BECK" class="card-project-img">
+            </div>
+        </a>
+
+        <!-- Card de Projeto Reshape From Within (Clicável) -->
+        <a href="https://reshape-from-within.vercel.app" target="_blank" class="project-card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <h2>Reshape From Within</h2>
+                    <p class="card-subtitle" data-i18n="project5-desc">Fitness and weight loss course platform.</p>
+                </div>
+                <i class="ph ph-arrow-right"></i>
+            </div>
+            
+            <div class="card-image-container">
+                <div class="card-browser-top">
+                    <div class="browser-tabs">
+                        <div class="card-mac-dots">
+                            <span class="dot close"></span>
+                            <span class="dot minimize"></span>
+                            <span class="dot maximize"></span>
+                        </div>
+                        <div class="browser-tab-active"></div>
+                        <div class="browser-add-tab"><i class="ph ph-plus"></i></div>
+                    </div>
+                    <div class="browser-nav">
+                        <div class="nav-controls">
+                            <i class="ph ph-arrow-left"></i>
+                            <i class="ph ph-arrow-right"></i>
+                            <i class="ph ph-arrow-clockwise"></i>
+                        </div>
+                        <div class="nav-search-bar"></div>
+                        <div class="nav-profile">
+                            <i class="ph ph-user-circle"></i>
+                            <i class="ph ph-dots-three-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://github.com/Luca-Designer/photos/blob/main/Captura%20de%20tela%202026-05-15%20182119.png?raw=true" alt="Reshape From Within" class="card-project-img">
+            </div>
+        </a>
+
+        <!-- Card de Projeto Narrativas Produtora (Clicável) -->
+        <a href="https://narrativasprodutora.com.br" target="_blank" class="project-card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <h2>Narrativas Produtora</h2>
+                    <p class="card-subtitle" data-i18n="project1-desc">First professional job — Focused on creating accessible works for people with low vision.</p>
+                </div>
+                <i class="ph ph-arrow-right"></i>
+            </div>
+            
+            <div class="card-image-container">
+                <div class="card-browser-top">
+                    <div class="browser-tabs">
+                        <div class="card-mac-dots">
+                            <span class="dot close"></span>
+                            <span class="dot minimize"></span>
+                            <span class="dot maximize"></span>
+                        </div>
+                        <div class="browser-tab-active"></div>
+                        <div class="browser-add-tab"><i class="ph ph-plus"></i></div>
+                    </div>
+                    <div class="browser-nav">
+                        <div class="nav-controls">
+                            <i class="ph ph-arrow-left"></i>
+                            <i class="ph ph-arrow-right"></i>
+                            <i class="ph ph-arrow-clockwise"></i>
+                        </div>
+                        <div class="nav-search-bar"></div>
+                        <div class="nav-profile">
+                            <i class="ph ph-user-circle"></i>
+                            <i class="ph ph-dots-three-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://github.com/Luca-Designer/photos/blob/main/Captura%20de%20tela%202026-05-15%20172105.png?raw=true" alt="Narrativas Produtora" class="card-project-img">
+            </div>
+        </a>
+
+        <!-- Card de Projeto Shekinah Home (Clicável) -->
+        <a href="https://shekinah-home.vercel.app" target="_blank" class="project-card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <h2>Shekinah Home</h2>
+                    <p class="card-subtitle" data-i18n="project6-desc">Luxury real estate platform with a premium aesthetic.</p>
+                </div>
+                <i class="ph ph-arrow-right"></i>
+            </div>
+            
+            <div class="card-image-container">
+                <div class="card-browser-top">
+                    <div class="browser-tabs">
+                        <div class="card-mac-dots">
+                            <span class="dot close"></span>
+                            <span class="dot minimize"></span>
+                            <span class="dot maximize"></span>
+                        </div>
+                        <div class="browser-tab-active"></div>
+                        <div class="browser-add-tab"><i class="ph ph-plus"></i></div>
+                    </div>
+                    <div class="browser-nav">
+                        <div class="nav-controls">
+                            <i class="ph ph-arrow-left"></i>
+                            <i class="ph ph-arrow-right"></i>
+                            <i class="ph ph-arrow-clockwise"></i>
+                        </div>
+                        <div class="nav-search-bar"></div>
+                        <div class="nav-profile">
+                            <i class="ph ph-user-circle"></i>
+                            <i class="ph ph-dots-three-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://github.com/Luca-Designer/photos/blob/main/Captura%20de%20tela%202026-05-15%20182410.png?raw=true" alt="Shekinah Home" class="card-project-img">
+            </div>
+        </a>
+        
+    </section>
+    
+    <!-- Info Section -->
+    <section class="info-section" id="info">
+        <div class="info-grid">
+            
+            <div class="info-card">
+                <h3 data-i18n="edu-title">Education</h3>
+                <div class="info-list">
+                    <div class="info-item">
+                        <h4 data-i18n="edu-design">Design</h4>
+                        <p>Iesb • Feb 2023 - Dec 2025</p>
+                    </div>
+                    <div class="info-item">
+                        <h4 data-i18n="edu-english">English</h4>
+                        <p>Times Idiomas • 161h (91.33%)</p>
+                    </div>
+                    <div class="info-item">
+                        <h4 data-i18n="edu-narrative">Digital Narrative</h4>
+                        <p>Gamifica • 40h (94%)</p>
+                    </div>
+                    <div class="info-item">
+                        <h4 data-i18n="edu-char">Character Creation</h4>
+                        <p>Gamifica • 40h (100%)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <h3 data-i18n="skills-title">Hard Skills</h3>
+                <div class="skills-list">
+                    <div class="skill">
+                        <span class="skill-name">Elementor</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Wordpress</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Inglês</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">SEO</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">AI Tools (Antigravity, Claude.ai, Lovable)</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="profile-section">
+                 <div class="profile-img-small"></div>
+                 <div class="footer-contact">
+                     <p>61 98199-7775</p>
+                     <p>lruas.contact@gmail.com</p>
+                 </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2025 Luca Ruas. All Rights Reserved.</p>
+            <p class="made-with" data-i18n="footer-made">Feito com amor e um copo d'água (esqueci de colocar o gelo no refrigerador)</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Sistema de Tradução
+        const translations = {
+            en: {
+                "nav-work": "Work",
+                "nav-about": "Info",
+                "nav-contact": "Contact",
+                "hero-title": "I build platforms,<br>websites & <span class='serif-italic'>landing pages.</span>",
+                "hero-status": "Graduated Web Developer. Based in Brazil.",
+                "hero-focus": "Focused on connecting brands and users efficiently.",
+                "project1-desc": "First professional job — Focused on creating accessible works for people with low vision.",
+                "project2-desc": "Long-term international project — Booming team (Australia).",
+                "project3-desc": "Fashion store from Canada, with a unique tropical style.",
+                "project4-desc": "Modern clothing e-commerce project.",
+                "project5-desc": "Fitness and weight loss course platform.",
+                "project6-desc": "Luxury real estate platform with a premium aesthetic.",
+                "project-img": "Project Image",
+                "view-project": "View Project",
+                "edu-title": "Education",
+                "edu-design": "Design",
+                "edu-english": "English",
+                "edu-narrative": "Digital Narrative",
+                "edu-char": "Character Creation",
+                "skills-title": "Hard Skills",
+                "footer-made": "Made with love and a glass of water (I forgot to put the ice in the fridge)"
+            },
+            pt: {
+                "nav-work": "Trabalhos",
+                "nav-about": "Sobre",
+                "nav-contact": "Contato",
+                "hero-title": "Eu crio plataformas,<br>sites & <span class='serif-italic'>landing pages.</span>",
+                "hero-status": "Desenvolvedor Web formado. Baseado no Brasil.",
+                "hero-focus": "Foco em conectar marcas e usuários de forma eficiente.",
+                "project1-desc": "Primeiro trabalho profissional — Foco em criar trabalhos acessíveis para pessoas com baixa visão.",
+                "project2-desc": "Projeto internacional — Equipe Booming (Austrália).",
+                "project3-desc": "Loja de moda do Canadá, com um estilo tropical único.",
+                "project4-desc": "Projeto de e-commerce de roupas moderno.",
+                "project5-desc": "Plataforma de curso fitness e emagrecimento.",
+                "project6-desc": "Plataforma imobiliária de luxo com estética premium.",
+                "project-img": "Imagem do Projeto",
+                "view-project": "Ver Projeto",
+                "edu-title": "Educação",
+                "edu-design": "Design",
+                "edu-english": "Inglês",
+                "edu-narrative": "Narrativa Digital",
+                "edu-char": "Criação de Personagem",
+                "skills-title": "Hard Skills",
+                "footer-made": "Feito com amor e um copo d'água (esqueci de colocar o gelo no refrigerador)"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            
+            document.getElementById('hero-title').innerHTML = translations[lang]['hero-title'];
+
+            document.querySelectorAll('.btn-lang').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = lang === 'pt' ? 0 : 1;
+            document.querySelectorAll('.btn-lang')[activeBtn].classList.add('active');
+            document.body.className = 'lang-' + lang;
+            document.body.className = 'lang-' + lang;
+            localStorage.setItem('preferredLang', lang);
+
+            // Atualiza os links do menu para passar o idioma na URL
+            document.querySelectorAll('.pill-item').forEach(link => {
+                if(link.tagName === 'A') {
+                    let href = link.getAttribute('href').split('?')[0];
+                    link.setAttribute('href', href + '?lang=' + lang);
+                }
+            });
+        }
+
+        window.onload = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            const savedLang = urlLang || localStorage.getItem('preferredLang') || 'en';
+            setLanguage(savedLang);
+        };
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <!-- Vanta.js Background Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 2.00, /* Otimização para performance mobile */
+            color: 0xff6b00, /* Laranja Neon do projeto */
+            backgroundColor: 0x060608, /* Cor de fundo principal */
+            points: 12.00, /* Reduzi levemente para ganhar performance */
+            maxDistance: 20.00,
+            spacing: 20.00,
+            showDots: true
+        })
+    </script>
+</body>
+</html>

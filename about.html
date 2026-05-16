@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Luca Ruas</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="lang-en">
+    
+    <!-- Animated Background -->
+    <div id="vanta-bg"></div>
+
+    <!-- Static Top Header -->
+    <header class="top-header">
+        <div class="nav-brand">
+            <span class="brand-name">Luca Ruas</span>
+            <span class="brand-title">Web Developer</span>
+        </div>
+        <div class="lang-switcher-stacked">
+            <button id="lang-btn-pt" onclick="setLanguage('pt')" class="btn-lang" title="Português">BR</button>
+            <button id="lang-btn-en" onclick="setLanguage('en')" class="btn-lang active" title="English">EN</button>
+        </div>
+    </header>
+
+    <!-- Floating Fixed Nav -->
+    <nav class="floating-navbar">
+        <div class="nav-pill">
+            <div class="pill-indicator" style="left: 50%;"></div>
+            <a href="index.html" class="pill-item" data-i18n="nav-work">Work</a>
+            <a href="about.html" class="pill-item active" data-i18n="nav-about">Info</a>
+        </div>
+        <a href="mailto:lruas.contact@gmail.com" class="contact-circle" title="Contact">
+            <i class="ph ph-at"></i>
+        </a>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="about-container">
+            <div class="about-badge">
+                <span class="dot-active"></span>
+                <span data-i18n="about-badge">ABOUT ME</span>
+            </div>
+            
+            <h1 class="about-headline" id="about-title">
+                Dedicated to creating digital products that blend <span class="serif-italic">aesthetic sense</span> with professional performance.
+            </h1>
+
+            <hr class="about-divider">
+
+            <div class="about-story">
+                <div class="story-grid">
+                    <div class="story-text">
+                        <p><strong data-i18n="story-title">O Começo</strong></p>
+                        <p data-i18n="story-p1">Bom, tudo começou quando minha mãe decidiu que precisava de um site para a pousada dela e eu resolvi me aventurar nessa missão. Tudo o que eu tinha eram dois anos de faculdade de Design, muito foco e um objetivo claro. Comecei a estudar sobre construção de sites, SEO, páginas dinâmicas e ferramentas como WordPress, Elementor, Wix e Zoho.</p>
+                        <p data-i18n="story-p2">Não demorou para eu perceber que apenas o básico não seria suficiente. Para ter total controle do que estava criando, decidi ir mais a fundo e aprender HTML, CSS, JavaScript e outras ferramentas de código. Até que, finalmente, o site ficou pronto! Para mim, ficou fantástico — afinal, era minha primeira vez fazendo algo daquela escala. O processo foi tão divertido quanto desafador. Hoje, já faz dois anos que trabalho com desenvolvimento web e não pretendo parar tão cedo.</p>
+                    </div>
+                    <aside class="story-quote">
+                        <blockquote data-i18n="story-quote">
+                            "Escolha um trabalho que você ame e não terá que trabalhar um único dia em sua vida."
+                            <cite>— Confúcio</cite>
+                        </blockquote>
+                    </aside>
+                </div>
+
+                <!-- Novo Capítulo -->
+                <div class="story-grid" style="margin-top: 4rem;">
+                    <div class="story-text">
+                        <p><strong data-i18n="traj-title">A Trajetória</strong></p>
+                        <p data-i18n="traj-p1">Comecei meu primeiro trabalho em uma empresa de audiodescrição chamada Narrativas Digitais. Nela, eu tinha uma grande missão: criar um site totalmente acessível, com uma identidade visual voltada para o alto contraste para que pessoas com baixa visão conseguissem navegar mais facilmente, além de ferramentas de acessibilidade e um intérprete de Libras. Foi um baita desafio! Tive várias reuniões e alinhamentos, mas após quase dois meses, ele ficou pronto. Nesse projeto eu me superei; ficou ainda melhor que o meu primeiro site e, para mim, ele continua muito bom até hoje. Mas a melhor sensação de todas foi receber meu primeiro salário fruto do meu código.</p>
+                        <p data-i18n="traj-p2">Depois dessa experiência, entrei em uma empresa de marketing digital. Lá, eu recebia demandas de vários projetos ao mesmo tempo: sites, landing pages e e-commerces. Essa rotina me ajudou muito a crescer, expandir meus conhecimentos e construir um ótimo networking. Criamos uma relação de confiança tão bacana que, até hoje, ainda recebo e desenvolvo alguns trabalhos para eles.</p>
+                    </div>
+                    <aside class="story-quote">
+                        <blockquote data-i18n="traj-quote">
+                            "A excelência não é um ato, mas um hábito."
+                            <cite>— Aristóteles</cite>
+                        </blockquote>
+                    </aside>
+                </div>
+
+                <!-- Novo Capítulo: Por que me contratar -->
+                <div class="story-grid" style="margin-top: 4rem;">
+                    <div class="story-text">
+                        <p><strong data-i18n="hire-title">Por que me contratar?</strong></p>
+                        <p data-i18n="hire-p1">Olá, eu sou o Luca, tenho 21 anos e uma grande motivação de crescer nesse mercado. Tenho um senso de responsabilidade enorme e me empenho ao máximo no meu trabalho. Dou o meu melhor para garantir que cada entrega seja satisfatória para os meus clientes. Vale muito a pena me chamar!</p>
+                        <p data-i18n="hire-p2">Sei que dois anos de mercado podem parecer pouco à primeira vista, mas entrego um trabalho impecável, confio bastante na minha capacidade e estou sempre pronto para aprender o que for necessário. Como ainda estou no início da minha jornada de crescimento, ofereço valores abaixo da média do mercado, mas com um ótimo retorno.</p>
+                    </div>
+                    <aside class="story-quote">
+                        <blockquote data-i18n="hire-quote">
+                            "Eu escolho uma pessoa preguiçosa para fazer um trabalho difícil. Porque uma pessoa preguiçosa vai encontrar uma maneira fácil de fazê-lo."
+                            <cite>— Bill Gates</cite>
+                        </blockquote>
+                    </aside>
+                </div>
+
+                <!-- Novo Capítulo: Sobre mim -->
+                <div class="story-text" style="margin-top: 4rem;">
+                    <p><strong data-i18n="personal-title">Sobre mim</strong></p>
+                    <p data-i18n="personal-p1">Gosto muito de atividades ao ar livre: gosto de caminhar, ir a parques e sair com os amigos. Mas também valorizo um tempo mais quieto, onde fico em casa assistindo a um filme, lendo um livro, jogando ou aperfeiçoando minhas habilidades para os meus trabalhos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section (Reusing Education and Skills) -->
+    <section class="info-section" id="info">
+        <div class="info-grid">
+            
+            <div class="info-card">
+                <h3 data-i18n="edu-title">Education</h3>
+                <div class="info-list">
+                    <div class="info-item">
+                        <h4 data-i18n="edu-design">Design</h4>
+                        <p>Iesb • Feb 2023 - Dec 2025</p>
+                    </div>
+                    <div class="info-item">
+                        <h4 data-i18n="edu-english">English</h4>
+                        <p>Times Idiomas • 161h (91.33%)</p>
+                    </div>
+                    <div class="info-item">
+                        <h4 data-i18n="edu-narrative">Digital Narrative</h4>
+                        <p>Gamifica • 40h (94%)</p>
+                    </div>
+                    <div class="info-item">
+                        <h4 data-i18n="edu-char">Character Creation</h4>
+                        <p>Gamifica • 40h (100%)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <h3 data-i18n="skills-title">Hard Skills</h3>
+                <div class="skills-list">
+                    <div class="skill">
+                        <span class="skill-name">Elementor</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Wordpress</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Inglês</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">SEO</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">AI Tools (Antigravity, Claude.ai, Lovable)</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="profile-section">
+                 <div class="profile-img-small"></div>
+                 <div class="footer-contact">
+                     <p>61 98199-7775</p>
+                     <p>lruas.contact@gmail.com</p>
+                 </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2025 Luca Ruas. All Rights Reserved.</p>
+            <p class="made-with" data-i18n="footer-made">Made with love and a glass of water (I forgot to put the ice in the fridge)</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const translations = {
+            en: {
+                "nav-work": "Work",
+                "nav-about": "Info",
+                "nav-contact": "Contact",
+                "about-badge": "ABOUT ME",
+                "about-title": "Dedicated to creating digital products that blend <span class='serif-italic'>aesthetic sense</span> with professional performance.",
+                "edu-title": "Education",
+                "edu-design": "Design",
+                "edu-english": "English",
+                "edu-narrative": "Digital Narrative",
+                "edu-char": "Character Creation",
+                "skills-title": "Hard Skills",
+                "footer-made": "Made with love and a glass of water (I forgot to put the ice in the fridge)",
+                "story-title": "The Beginning",
+                "story-p1": "Well, it all started when my mother decided she needed a website for her inn and I resolved to venture into this mission. All I had were two years of Design college, plenty of free time, and a dream. I started studying website building, SEO, dynamic pages, and tools like WordPress, Elementor, Wix, and Zoho.",
+                "story-p2": "It didn't take long for me to realize that just the basics wouldn't be enough. To have total control over what I was creating, I decided to go deeper and learn HTML, CSS, JavaScript, and other coding tools. Until finally, the site was ready! To me, it looked fantastic — after all, it was my first time doing something of that scale. The process was as fun as it was challenging. Today, it's been two years since I've been working with web development, and I don't plan on stopping anytime soon.",
+                "story-quote": "\"Choose a job you love, and you will never have to work a day in your life.\" <cite>— Confucius</cite>",
+                "traj-title": "The Trajectory",
+                "traj-p1": "I started my first job at an audio description company called Narrativas Digitais. There, I had a great mission: to create a fully accessible website, with a visual identity focused on high contrast so that people with low vision could navigate more easily, as well as accessibility tools and a Libras (Sign Language) interpreter. It was a huge challenge! I had several meetings and alignments, but after almost two months, it was ready. In this project, I outdid myself; it turned out even better than my first site and, to me, it remains very good to this day. But the best feeling of all was receiving my first salary as a result of my code.",
+                "traj-p2": "After this experience, I joined a digital marketing agency. There, I received demands from several projects at the same time: websites, landing pages, and e-commerces. This routine helped me a lot to grow, expand my knowledge, and build a great networking. We created such a nice relationship of trust that, even today, I still receive and develop some work for them.",
+                "traj-quote": "\"Excellence is not an act, but a habit.\" <cite>— Aristotle</cite>",
+                "hire-title": "Why hire me?",
+                "hire-p1": "Hello, I'm Luca, I'm 21 years old and I have a great motivation to grow in this market. I have an enormous sense of responsibility and I commit myself to the maximum in my work. I give my best to ensure that every delivery is satisfactory for my clients. It's definitely worth calling me!",
+                "hire-p2": "I know that two years in the market might seem like little at first glance, but I deliver impeccable work, I have a lot of confidence in my ability, and I'm always ready to learn whatever is necessary. Since I'm still at the beginning of my growth journey, I offer values below the market average, but with a great return.",
+                "hire-quote": "\"I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it.\" <cite>— Bill Gates</cite>",
+                "personal-title": "About me",
+                "personal-p1": "I really enjoy outdoor activities: I like walking, going to parks, and hanging out with friends. But I also value quiet time, where I stay home watching a movie, reading a book, playing video games, or perfecting my skills for my work.",
+                "personal-quote": "\"Nature does not hurry, yet everything is accomplished.\" <cite>— Lao Tzu</cite>"
+            },
+            pt: {
+                "nav-work": "Trabalhos",
+                "nav-about": "Sobre",
+                "nav-contact": "Contato",
+                "about-badge": "SOBRE MIM",
+                "about-title": "Dedicado a criar produtos digitais que unem <span class='serif-italic'>senso de estética</span> com performance profissional.",
+                "edu-title": "Educação",
+                "edu-design": "Design",
+                "edu-english": "Inglês",
+                "edu-narrative": "Narrativa Digital",
+                "edu-char": "Criação de Personagem",
+                "skills-title": "Hard Skills",
+                "footer-made": "Feito com amor e um copo d'água (esqueci de colocar o gelo no refrigerador)",
+                "story-title": "O Começo",
+                "story-p1": "Bom, tudo começou quando minha mãe decidiu que precisava de um site para a pousada dela e eu resolvi me aventurar nessa missão. Tudo o que eu tinha eram dois anos de faculdade de Design, muito tempo livre e um sonho. Comecei a estudar sobre construção de sites, SEO, páginas dinâmicas e ferramentas como WordPress, Elementor, Wix e Zoho.",
+                "story-p2": "Não demorou para eu perceber que apenas o básico não seria suficiente. Para ter total controle do que estava criando, decidi ir mais a fundo e aprender HTML, CSS, JavaScript e outras ferramentas de código. Até que, finalmente, o site ficou pronto! Para mim, ficou fantástico — afinal, era minha primeira vez fazendo algo daquela escala. O processo foi tão divertido quanto desafiador. Hoje, já faz dois anos que trabalho com desenvolvimento web e não pretendo parar tão cedo.",
+                "story-quote": "\"Escolha um trabalho que você ame e não terá que trabalhar um único dia em sua vida.\" <cite>— Confúcio</cite>",
+                "traj-title": "A Trajetória",
+                "traj-p1": "Comecei meu primeiro trabalho em uma empresa de audiodescrição chamada Narrativas Digitais. Nela, eu tinha uma grande missão: criar um site totalmente acessível, com uma identidade visual voltada para o alto contraste para que pessoas com baixa visão conseguissem navegar mais facilmente, além de ferramentas de acessibilidade e um intérprete de Libras. Foi um baita desafio! Tive várias reuniões e alinhamentos, mas após quase dois meses, ele ficou pronto. Nesse projeto eu me superei; ficou ainda melhor que o meu primeiro site e, para mim, ele continua muito bom até hoje. Mas a melhor sensação de todas foi receber meu primeiro salário fruto do meu código.",
+                "traj-p2": "Depois dessa experiênca, entrei em uma empresa de marketing digital. Lá, eu recebia demandas de vários projetos ao mesmo tempo: sites, landing pages e e-commerces. Essa rotina me ajudou muito a crescer, expandir meus conhecimentos e construir um ótimo networking. Criamos uma relação de confiança tão bacana que, até hoje, ainda recebo e desenvolvo alguns trabalhos para eles.",
+                "traj-quote": "\"A excelência não é um ato, mas um hábito.\" <cite>— Aristóteles</cite>",
+                "hire-title": "Por que me contratar?",
+                "hire-p1": "Olá, eu sou o Luca, tenho 21 anos e uma grande motivação de crescer nesse mercado. Tenho um senso de responsabilidade enorme e me empenho ao máximo no meu trabalho. Dou o meu melhor para garantir que cada entrega seja satisfatória para os meus clientes. Vale muito a pena me chamar!",
+                "hire-p2": "Sei que dois anos de mercado podem parecer pouco à primeira vista, mas entrego um trabalho impecável, confio bastante na minha capacidade e estou sempre pronto para aprender o que for necessário. Como ainda estou no início da minha jornada de crescimento, ofereço valores abaixo da média do mercado, mas com um ótimo retorno.",
+                "hire-quote": "\"Eu escolho uma pessoa preguiçosa para fazer um trabalho difícil. Porque uma pessoa preguiçosa vai encontrar uma maneira fácil de fazê-lo.\" <cite>— Bill Gates</cite>",
+                "personal-title": "Sobre mim",
+                "personal-p1": "Gosto muito de atividades ao ar livre: gosto de caminhar, ir a parques e sair com os amigos. Mas também valorizo um tempo mais quieto, onde fico em casa assistindo a um filme, lendo um livro, jogando ou aperfeiçoando minhas habilidades para os meus trabalhos.",
+                "personal-quote": "\"A natureza não se apressa, e ainda assim tudo é realizado.\" <cite>— Lao Tzu</cite>"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            
+            document.getElementById('about-title').innerHTML = translations[lang]['about-title'];
+
+            document.querySelectorAll('.btn-lang').forEach(btn => btn.classList.remove('active'));
+            const ptBtn = document.getElementById('lang-btn-pt');
+            const enBtn = document.getElementById('lang-btn-en');
+            if(lang === 'pt') ptBtn.classList.add('active');
+            else enBtn.classList.add('active');
+            document.body.className = 'lang-' + lang;
+            localStorage.setItem('preferredLang', lang);
+
+            // Atualiza os links do menu para passar o idioma na URL
+            document.querySelectorAll('.pill-item').forEach(link => {
+                if(link.tagName === 'A') {
+                    let href = link.getAttribute('href').split('?')[0];
+                    link.setAttribute('href', href + '?lang=' + lang);
+                }
+            });
+        }
+
+        window.onload = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            const savedLang = urlLang || localStorage.getItem('preferredLang') || 'en';
+            setLanguage(savedLang);
+        };
+    </script>
+
+    <!-- Vanta.js Background Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 2.00,
+            color: 0xff6b00,
+            backgroundColor: 0x060608,
+            points: 12.00,
+            maxDistance: 20.00,
+            spacing: 20.00,
+            showDots: true
+        })
+    </script>
+</body>
+</html>
