@@ -207,7 +207,12 @@ body {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
 }
-/* Contact Circle */
+/* Contact Circle & Dropdown */
+.contact-menu-container {
+    position: relative;
+    display: inline-block;
+}
+
 .contact-circle {
     display: flex;
     align-items: center;
@@ -224,11 +229,65 @@ body {
     -webkit-backdrop-filter: blur(12px);
     transition: all 0.3s ease;
     pointer-events: auto;
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
 }
 
 .contact-circle:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+}
+
+.contact-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: rgba(25, 25, 30, 0.85);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 0.5rem;
+    min-width: 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 110;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--accent-orange);
+}
+
+.dropdown-item i {
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 /* Hero Section */
@@ -996,11 +1055,20 @@ footer {
     }
     
     /* Ícone de Contato Flutuante Canto Inferior Direito */
-    .contact-circle {
+    .contact-menu-container {
         position: fixed;
         bottom: 1.2rem; /* Mais para baixo */
         right: 1.2rem;
         z-index: 999;
+    }
+    
+    .contact-circle {
+        position: static;
+    }
+    
+    .contact-dropdown {
+        top: auto;
+        bottom: calc(100% + 0.5rem);
     }
     
     .info-section { padding: 50px 10px; }

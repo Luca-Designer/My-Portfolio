@@ -56,9 +56,21 @@
             </button>
         </div>
 
-        <a href="mailto:lruas.contact@gmail.com" class="contact-circle" title="Contact">
-            <i class="ph ph-at"></i>
-        </a>
+        <div class="contact-menu-container">
+            <button class="contact-circle" id="contactBtn" onclick="toggleContactMenu(event)" title="Contact">
+                <i class="ph ph-at" id="contactIcon"></i>
+            </button>
+            <div class="contact-dropdown" id="contactDropdown">
+                <a href="mailto:lruas.contact@gmail.com" target="_blank" class="dropdown-item">
+                    <span>Email</span>
+                    <i class="ph ph-arrow-up-right"></i>
+                </a>
+                <a href="https://wa.me/5561981997775" target="_blank" class="dropdown-item">
+                    <span>WhatsApp</span>
+                    <i class="ph ph-arrow-up-right"></i>
+                </a>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -362,10 +374,10 @@
         <div class="footer-content">
             <div class="profile-section">
                  <div class="profile-img-small">
-                     <img src="https://media.discordapp.net/attachments/1028765909915017216/1220911820102041610/IMG_7122.jpg?ex=6a091e3d&is=6a07ccbd&hm=9d854b4110f08983243b6c61873ee3a885c01d6f05e4f47ccf8d5f5de57c6872&=&format=webp&width=462&height=694" alt="Luca Ruas">
+                     <img src="IMG_7122.jpg" alt="Luca Ruas">
                  </div>
                  <div class="footer-contact">
-                     <p>61 98199-7775</p>
+                     <p>+55 61 98199-7775</p>
                      <p>lruas.contact@gmail.com</p>
                  </div>
             </div>
@@ -485,6 +497,28 @@
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
+
+        function toggleContactMenu(event) {
+            event.stopPropagation();
+            const dropdown = document.getElementById('contactDropdown');
+            const icon = document.getElementById('contactIcon');
+            const isActive = dropdown.classList.toggle('active');
+            if (isActive) {
+                icon.className = 'ph ph-x';
+            } else {
+                icon.className = 'ph ph-at';
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('contactDropdown');
+            const icon = document.getElementById('contactIcon');
+            const container = document.querySelector('.contact-menu-container');
+            if (dropdown && dropdown.classList.contains('active') && !container.contains(event.target)) {
+                dropdown.classList.remove('active');
+                if (icon) icon.className = 'ph ph-at';
+            }
+        });
     </script>
 
     <!-- Vanta.js Background Animation -->
